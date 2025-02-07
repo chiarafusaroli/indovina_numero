@@ -40,14 +40,17 @@ namespace CoreLibrary
         public GameStatus Attempts(int attempts)
         {
             _usedAttempts += 1;
-            if(attempts == _numberToGuess)
+            if (attempts == _numberToGuess)
             {
                 _status = GameStatus.WIN;
             }
-            if(RemainingAttempts>0)
-                _status = GameStatus.IN_PROGRESS; 
             else
-                _status = GameStatus.LOSE;
+            {
+                if (RemainingAttempts > 0)
+                    _status = GameStatus.IN_PROGRESS;
+                else
+                    _status = GameStatus.LOSE;
+            }
 
             return Status;
         }
