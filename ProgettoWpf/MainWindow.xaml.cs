@@ -60,14 +60,14 @@ namespace ProgettoWpf
         private void ManageLose()
         {
             lblMessage.Foreground = Brushes.IndianRed;
-            lblMessage.FontSize = 32;
+            lblMessage.FontSize = 22;
             lblMessage.Content = "HAI PERSO! mi spiace non hai indovinato la tua partita finisce qui!";
             btnTry.IsEnabled = false;
         }
         private void ManageWin()
         {
             lblMessage.Foreground = Brushes.GreenYellow;
-            lblMessage.FontSize = 32;
+            lblMessage.FontSize = 22;
             lblMessage.Content = "HAI VINTO! Complimenti!";
             btnTry.IsEnabled = false;
         }
