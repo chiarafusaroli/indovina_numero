@@ -1,4 +1,6 @@
-﻿namespace CoreLibrary
+﻿using LibraryProject;
+
+namespace CoreLibrary
 {
     public enum GameStatus
     {
@@ -15,18 +17,22 @@
         private GameStatus _status;
         public GameStatus Status { get { return _status; } }
 
+        private IGenerator _generator;
+
         public int RemainingAttempts
         {
             get { return _maxAttempts - _usedAttempts; }
         }
 
-        public Game(int maxAttempts=10, int maxNumeber=1000)
+        public Game(int maxAttempts=10, int maxNumber=1000, IGenerator? generator=null)
         {
             this._maxAttempts = maxAttempts;
             this._usedAttempts = 0;
 
-            Random random = new Random();
-            this._numberToGuess = random.Next(maxNumeber);
+            if(generator == null ) { _generator = new RandomGenerator() }
+            else { _generator = generator; }
+
+            this._numberToGuess = _generator.GenerateNumber(maxNumber);
 
             _status = GameStatus.IN_PROGRESS;
         }
