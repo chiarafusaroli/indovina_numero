@@ -20,7 +20,7 @@
             get { return _maxAttempts - _usedAttempts; }
         }
 
-        public Game(int maxAttempts, int maxNumeber=1000)
+        public Game(int maxAttempts=10, int maxNumeber=1000)
         {
             this._maxAttempts = maxAttempts;
             this._usedAttempts = 0;
