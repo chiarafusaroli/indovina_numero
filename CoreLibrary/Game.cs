@@ -27,6 +27,8 @@
 
             Random random = new Random();
             this._numberToGuess = random.Next(maxNumeber);
+
+            _status = GameStatus.IN_PROGRESS;
         }
 
         public GameStatus Attempts(int attempts)
