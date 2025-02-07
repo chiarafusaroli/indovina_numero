@@ -19,6 +19,8 @@ namespace CoreLibrary
 
         private IGenerator _generator;
 
+        private List<int> _allAttempts;
+        public List<int> AllAttempts { get { return _allAttempts; } }
         public int RemainingAttempts
         {
             get { return _maxAttempts - _usedAttempts; }
@@ -28,6 +30,7 @@ namespace CoreLibrary
         {
             this._maxAttempts = maxAttempts;
             this._usedAttempts = 0;
+            _allAttempts = new List<int>();
 
             if(generator == null ) { _generator = new RandomGenerator(); }
             else { _generator = generator; }
@@ -40,6 +43,8 @@ namespace CoreLibrary
         public GameStatus Attempts(int attempts)
         {
             _usedAttempts += 1;
+            _allAttempts.Add(attempts);
+
             if (attempts == _numberToGuess)
             {
                 _status = GameStatus.WIN;

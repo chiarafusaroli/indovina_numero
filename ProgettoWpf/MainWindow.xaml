@@ -12,6 +12,7 @@
         <Label x:Name="lblMessage" Content="" HorizontalAlignment="Center" Height="50" Margin="0,105,0,0" VerticalAlignment="Top" Width="800" FontSize="18"  HorizontalContentAlignment="Center" Foreground="Red" />
         <TextBox x:Name="txtAttempts" HorizontalAlignment="Center" Height="53" Margin="0,154,0,0" TextWrapping="Wrap" Text="inserisci un valore"  VerticalAlignment="Top" TextAlignment="Center" VerticalContentAlignment="Center" Width="495" GotFocus="DeleteContent"/>
         <Button  x:Name="btnTry" Content="Try" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Width="500" Height="50" Background="Orchid" FontWeight="Bold" FontSize="22" Click="Play"/>
+        <ListBox x:Name="lstBoxAttempts" HorizontalAlignment="Left" Height="252" Margin="10,155,0,0" VerticalAlignment="Top" Width="125" />
 
     </Grid>
 </Window>

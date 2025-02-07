@@ -36,6 +36,7 @@ namespace ProgettoWpf
         {
             try
             {
+                lstBoxAttempts.ItemsSource = null;
                 int attempts = int.Parse(txtAttempts.Text);
                 GameStatus status = game.Attempts(attempts);
                 switch(status)
@@ -50,7 +51,8 @@ namespace ProgettoWpf
                         ManageLose();
                         break;
                 }
-                
+
+                lstBoxAttempts.ItemsSource = game.AllAttempts;                
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
