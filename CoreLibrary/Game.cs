@@ -29,7 +29,7 @@ namespace CoreLibrary
             this._maxAttempts = maxAttempts;
             this._usedAttempts = 0;
 
-            if(generator == null ) { _generator = new RandomGenerator() }
+            if(generator == null ) { _generator = new RandomGenerator(); }
             else { _generator = generator; }
 
             this._numberToGuess = _generator.GenerateNumber(maxNumber);
